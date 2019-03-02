@@ -15,8 +15,8 @@
 <table style="padding: 5px;">
 <tr>
 	<td>Name:</td>
-		<td><input type="text" id="myname" value="abc"onblur="validname()"style="height:25px;"></td><td><p id="namef"></p></td>
-		<td><p id="vname" style="font-size: 10px; display: inline; color: white;">Invalidnssame</p></td>
+		<td><input type="text" id="myname" value="abc"onblur="validname()"style="height:25px;"></td><td></td>
+		<td><p id="vname" style="font-size: 10px; display: inline; color: white;"> </td>  <td> </td>
 	</tr>
 	<tr>&nbsp;</tr>
 	
@@ -80,13 +80,15 @@
 		
 		
 			document.getElementById("myname").readOnly = true;
-			document.getElementById("gender").readOnly = true;
-			document.getElementById("db").readOnly = true;
-			document.getElementById("age").readOnly = true;
-			document.getElementById("email").readOnly = true;
-			document.getElementById("phno").readOnly = true;
-			document.getElementById("diagnosis").readOnly = true;
-			document.getElementById("diagnosis").readOnly = true;
+				document.getElementById("gender").readOnly = true;
+				document.getElementById("gender1").readOnly = true;
+				document.getElementById("db").readOnly = true;
+				document.getElementById("age").readOnly = true;
+				document.getElementById("email").readOnly = true;
+				document.getElementById("phno").readOnly = true;
+				document.getElementById("diagnosis").readOnly = true;
+				document.getElementById("des").readOnly = true;
+				
 				
 				
 			var mn=document.getElementById("myname").value;
@@ -102,26 +104,7 @@
 			var len1=un.length;
 		    if(!actualname.test(mn))   {    alert("Please enter a valid name");     }
 		else{
-			if(!actualuname.test(un) && len1>6 && len1<30){     alert("Please enter a valid username");      }
-		else{
-			if(len<6){
-				alert("Short password");
-		         }
-		else if(len>15)
-		{
-			console.log("long");
-				alert("Long password");
-		}
-		else{
-				var actualpword=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
-				if(!actualpword.test(pword))
-				{
-				
-					alert("Password too weak!");
-				}
-				else{
-					if(cpw!=pw){alert("Please give same password in the 2 feilds.")}
-						else{
+			
 							var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
 							if(!actualem.test(em))
 							{
@@ -145,10 +128,6 @@
 		}
 		}
 		}
-	}
-	}
-}
-}
 function validname()
 {
 	var mn=document.getElementById("myname").value;
@@ -161,47 +140,9 @@ function validname()
 		    	document.getElementById("vname").innerHTML="cnnnnd"; 
 		    }
 }
-function validuname()
-{
-	var un=document.getElementById("uname").value;
-			var actualuname=/^[a-zA-Z]+[a-zA-Z0-9]/;
-			if(!actualuname.test(un)){
-			var hp1=document.getElementById("vuname");
-		    hp1.style.color="black";  
-				document.getElementById("vuname").innerHTML="Invalid username.";       }
-			else
-			{
-				document.getElementById("vuname").innerHTML="";
-			}
 
-}
-function validpword()
-{
-	var pw=document.getElementById("vpword").value;
-	var actualpword=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
-				if(!actualpword.test(pword))
-				{
-					document.getElementById("vpword").innerHTML="Password too weak!";
-				}
-				else
-			{
-				document.getElementById("vpword").innerHTML="";
-			}
-}
-function validcpword()
-{
-	var pw=document.getElementById("pword").value;
-			var cpw=document.getElementById("cpword").value;
-			if(cpw!=pw)
-			{
-				var hp1=document.getElementById("vcpword");
-		    hp1.style.color="black";  
-				document.getElementById("vcpword").innerHTML="Enter valid password";
-			}
-			else{
-				document.getElementById("vcpword").innerHTML="";
-			}
-}
+
+
 function validemail()
 {
 	var em=document.getElementById("email").value;
@@ -241,7 +182,7 @@ function validphno1()
 		    	document.getElementById("vadd").innerHTML=""; 
 		    }
 }
-}
+
 function validaddress()
 {
 	var mn=document.getElementById("Text1").value;
@@ -271,16 +212,15 @@ document.getElementById("age").value=age;
 	}
 function edit()
 {
-document.getElementById("myname").readOnly = false;
-				document.getElementById("gender").readOnly = false;
-				document.getElementById("db").readOnly = false;
-				document.getElementById("age").readOnly = false;
-				document.getElementById("email").readOnly = false;
-				document.getElementById("phno").readOnly = false;
-				document.getElementById("diagnosis").readOnly = false;
-				document.getElementById("diagnosis").readOnly = false;
-				
-
+			document.getElementById("myname").readOnly = false;
+			document.getElementById("gender").readOnly = false;
+			document.getElementById("gender1").readOnly = false;
+			document.getElementById("db").readOnly = false;
+			document.getElementById("age").readOnly = false;
+			document.getElementById("email").readOnly = false;
+			document.getElementById("phno").readOnly = false;
+			document.getElementById("diagnosis").readOnly = false;
+			document.getElementById("des").readOnly = false;
 
 
 
