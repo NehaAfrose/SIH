@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>form</title>
+
+</head>
+
+
+<body>
+
+<!--<form action="#" method="post">-->
+	<center>
+		<div id="rpage">
+<table style="padding: 5px;">
+
+
+
+<tr>
+	<td>Name:</td>
+		<td><input type="text" id="myname" value="abc" onblur="validname()"style="height:30px;width:300px;"></td><td></td>
+		<td><p id="vname" style="font-size: 10px; display: inline; color: white;">Invalidnssame</p></td>
+	</tr>
+	<tr>&nbsp;</tr>
+	
+	<tr>&nbsp;</tr>
+	
+
+	<tr><td>Address:</td>
+		<td><input type="text"cols="40" id="Text1" value="abc" onblur="validaddress()"rows="5" style="width:300px; height:60px;" />
+		</td><td></td><td><p id="vadd"></p></td></tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Email:</td>
+		<td><input type="text"cols="40" id="email" value="abc" onblur="validemail()"rows="5" style="width:300px; height:60px;" />
+		</td><td></td>
+		<td><p id="vemail" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Phone.no:</td>
+		<td><input type="text"cols="40" id="phno" value="abc" onblur="validphno()"rows="5" style="width:300px; height:60px;" />
+		</td><td></td>
+		<td><p id="vphno" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Specialization</td>
+		<td><input type="text"cols="40" id="spc" value="abc" onblur="validspc()" rows="5" style="width:300px; height:60px;" /></td><td></td>
+		<td><p id="vspc" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Work History</td>
+	<td><input type="text"cols="40" id="work" VALUE="ABC" onblur="validwork()"rows="5" style="width:300px; height:60px;" /></td>
+		<td></p></td>
+		<td><p id="vwork" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+<tr>
+	<td>Experience</td>
+	<td><input type="text"cols="40" id="exp" value="abc" onblur="validexp()"rows="5" style="width:300px; height:60px;" /></td>
+		<td></td>
+		<td><p id="vexp" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+		<tr>
+	<td>Certifications& <br> Licensure</td>
+	<td><input type="text"cols="40" value="abc" id="cer" onblur="validcer()"rows="5" style="width:300px; height:60px;" /></td>
+		<td></td>
+		<td><p id="vcer" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	
+	<tr><td><input type="submit" value="Edit" onclick="edittext()" id="vedit"></td>
+	<td><input type="submit" value="Submit" onclick="test1()" id="vsubmit"></td></tr>
+
+	
+<script>
+	document.getElementById("myname").readOnly = true;
+				 	document.getElementById("Text1").readOnly = true;
+					 	document.getElementById("email").readOnly = true;
+						 	document.getElementById("phno").readOnly = true;
+							 	document.getElementById("spc").readOnly = true;
+								 	document.getElementById("work").readOnly = true;
+									 	document.getElementById("exp").readOnly = true;
+										 	document.getElementById("cer").readOnly = true;
+				
+</script>
+ 
+	</table></center>
+
+</div>
+<br><br><br><br>
+<div>
+
+</div>
+<script type="text/javascript">
+		function test1()
+		{
+		
+		
+			document.getElementById("myname").readOnly = true;
+		    document.getElementById("Text1").readOnly = true;
+			document.getElementById("email").readOnly = true;
+			document.getElementById("phno").readOnly = true;
+		    document.getElementById("spc").readOnly = true;
+			document.getElementById("work").readOnly = true;
+			document.getElementById("exp").readOnly = true;
+			document.getElementById("cer").readOnly = true;
+				
+			var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+			var em=document.getElementById("email").value;
+			var pn=document.getElementById("phno").value;
+			var add=document.getElementById("Text1").value;
+			var s=document.getElementById("spc").value;
+			var w=document.getElementById("work").value;
+			var e=document.getElementById("exp").value;
+			var c=document.getElementById("cer").value;
+		    if(!actualname.test(mn))   {    alert("Please enter a valid name");     }
+		
+		
+		
+				else{
+					
+							var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+		 					{
+								alert("Enter valid email id!");
+							}
+							
+						else{
+							var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn)){alert("Enter valid phone number!")}
+						else{
+							var actualadd=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
+							if(!actualadd.test(add)){alert("Enter valid address!");}
+								else
+								{
+						var actuals=/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+						if(!actuals.test(s)){alert("enter valid");}
+                             else
+                              {
+						var actualw=/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;	  
+							  if(!actualw.test(w)){alert("enter valid");}
+							  	else
+{
+actuale=	/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+if(!actuale.test(e)){alert("enter valid")}
+else{							
+actualc=		/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+		if(!actualc.test(c)){alert("enter valid");}									
+						else{
+										alert("Registration successful");
+								
+								//window.location = "main2.html"; // Redirecting to other page.
+									//return false;
+		
+									
+		}
+		}
+		}
+		}
+	}
+}
+}}}
+function validname()                                                      
+{
+	var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vname");
+		    hp1.style.color="black";  
+		    	document.getElementById("vname").innerHTML="Invalid name.";     }
+		    else
+		    {
+		    	document.getElementById("vname").innerHTML=" "; 
+		    }
+}
+
+
+
+function validemail()
+{
+	var em=document.getElementById("email").value;
+	var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+							{
+								var hp1=document.getElementById("vemail");
+		    hp1.style.color="black";  
+								document.getElementById("vemail").innerHTML="Invalid email";
+							}
+							else
+							{
+								document.getElementById("vemail").innerHTML="";
+							}
+}
+function validphno()
+{
+	var pn=document.getElementById("phno").value;
+	var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn))
+							{
+								var hp1=document.getElementById("vphno");
+		    hp1.style.color="black";  
+								document.getElementById("vphno").innerHTML="Invalid phone number";
+							}
+							else {document.getElementById("vphno").innerHTML="";}
+}
+
+function validspc()
+{
+	var un=document.getElementById("spc").value;
+			var actualuname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vspc");
+		    hp1.style.color="black";  
+				document.getElementById("vspc").innerHTML="Invalid username.";       }
+			else
+			{
+				document.getElementById("vspc").innerHTML="";
+			}
+
+}
+function validwork()
+{
+	var un=document.getElementById("work").value;
+			var actualuname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vwork");
+		    hp1.style.color="black";  
+				document.getElementById("vwork").innerHTML="Invalid username.";       }
+			else
+			{
+				document.getElementById("vwork").innerHTML="";
+			}
+
+}
+
+function validexp()
+{
+	var un=document.getElementById("exp").value;
+			var actualuname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vexp");
+		    hp1.style.color="black";  
+				document.getElementById("vexp").innerHTML="Invalid username.";       }
+			else
+			{
+				document.getElementById("vexp").innerHTML="";
+			}
+
+}
+function validcer()
+{
+	var un=document.getElementById("cer").value;
+			var actualuname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vcer");
+		    hp1.style.color="black";  
+				document.getElementById("vcer").innerHTML="Invalid username.";       }
+			else
+			{
+				document.getElementById("vcer").innerHTML="";
+			}
+
+}
+
+
+function validaddress()
+{
+	var mn=document.getElementById("Text1").value;
+		    var actualname=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vadd");
+		    hp1.style.color="black";  
+		    	document.getElementById("vadd").innerHTML="Invalid address.";     }
+		    else
+		    {
+		    	document.getElementById("vadd").innerHTML=""; 
+		    }
+}
+function edittext()
+{
+ 
+		    	document.getElementById("myname").readOnly = false;
+				 	document.getElementById("Text1").readOnly = false;
+					 	document.getElementById("email").readOnly = false;
+						 	document.getElementById("phno").readOnly = false;
+							 	document.getElementById("spc").readOnly = false;
+								 	document.getElementById("work").readOnly = false;
+									 	document.getElementById("exp").readOnly = false;
+										 	document.getElementById("cer").readOnly = false;
+				
+				
+				
+}				
+
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>form</title>
+	<link rel="stylesheet" type="text/css" href="assign5.css">
+</head>
+
+
+<body>
+
+<!--<form action="#" method="post">-->
+	<center>
+		<div id="rpage">
+<table style="padding: 5px;">
+<tr>
+	<td>Name:</td>
+		<td><input type="text" id="myname" value="abc"onblur="validname()"style="height:25px;"></td><td><p id="namef"></p></td>
+		<td><p id="vname" style="font-size: 10px; display: inline; color: white;">Invalidnssame</p></td>
+	</tr>
+	<tr>&nbsp;</tr>
+	
+	<tr>&nbsp;</tr>
+	<tr>
+	<td>Gender:</td>
+		<td><input type="radio" id="gender" name="gender" value="male" > Male
+  <input type="radio" name="gender" id="gender1"value="female"> Female<br></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr><td>
+		DateofBirth</td>
+		<td><input  style="width:167px;height:25px;"type="date" id="db" size="700"></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr><td>Age</td><td><input type="int"  id="age" onblur="validage()"style="height:25px;"></td></tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Email:</td>
+		<td><input type="text" id="email" value="abc"onblur="validemail()"style="height:25px;"></td><td><p id="namef"></p></td>
+		<td><p id="vemail" style="font-size: 10px; display: inline; color: white;">vvsbbbbb</p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Phone.no:</td>
+		<td><input type="tel" id="phno" value="abc"onblur="validphno()"style="height:25px;"></td><td><p id="vphno"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr> 
+	<tr>
+	<td>Diagnosis:</td>
+		<td><input type="text"cols="40"  id="diagnosis"value="abc"onblur="validaddress()"rows="5" style="width:167px; height:50px;" name="Text1"  id="Text1"  value="" /></td><td><p id="namef"></p></td>
+		<td><p id="vadd" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Description:</td>
+		<td><input type="text" id="des" value="abc"onblur="validdes()"style="height:25px;"></td><td></td>
+		<td><p id="vdes" style="font-size: 10px; display: inline; color: white;"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr><td>&nbsp;</td><td><input type="submit" value="Submit" onclick="test1()" id="vsubmit"> </td></tr>
+	<tr><td></td><td><input type="button" value="edit" onclick="edit()" id="edit" > </td></tr>
+	<script>
+				document.getElementById("myname").readOnly = true;
+				document.getElementById("gender").readOnly = true;
+				document.getElementById("gender1").readOnly = true;
+				document.getElementById("db").readOnly = true;
+				document.getElementById("age").readOnly = true;
+				document.getElementById("email").readOnly = true;
+				document.getElementById("phno").readOnly = true;
+				document.getElementById("diagnosis").readOnly = true;
+				document.getElementById("des").readOnly = true;
+				
+</script>
+
+	
+	
+</table></center>
+
+</div>
+<br><br><br><br>
+<div>
+
+</div>
+<script type="text/javascript">
+		function test1()
+		{
+		
+		
+			document.getElementById("myname").readOnly = true;
+			document.getElementById("gender").readOnly = true;
+			document.getElementById("db").readOnly = true;
+			document.getElementById("age").readOnly = true;
+			document.getElementById("email").readOnly = true;
+			document.getElementById("phno").readOnly = true;
+			document.getElementById("diagnosis").readOnly = true;
+			document.getElementById("diagnosis").readOnly = true;
+				
+				
+			var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    var un=document.getElementById("uname").value;
+			var actualuname=/^[a-zA-Z]+[a-zA-Z0-9]/;
+			var pw=document.getElementById("pword").value;
+			var cpw=document.getElementById("cpword").value;
+			var em=document.getElementById("email").value;
+			var pn=document.getElementById("phno").value;
+			var pn1=document.getElementById("phno1").value;
+			var len=pw.length;
+			var len1=un.length;
+		    if(!actualname.test(mn))   {    alert("Please enter a valid name");     }
+		else{
+			if(!actualuname.test(un) && len1>6 && len1<30){     alert("Please enter a valid username");      }
+		else{
+			if(len<6){
+				alert("Short password");
+		         }
+		else if(len>15)
+		{
+			console.log("long");
+				alert("Long password");
+		}
+		else{
+				var actualpword=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
+				if(!actualpword.test(pword))
+				{
+				
+					alert("Password too weak!");
+				}
+				else{
+					if(cpw!=pw){alert("Please give same password in the 2 feilds.")}
+						else{
+							var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+							{
+								alert("Enter valid email id!")
+							}
+						else{
+							var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn)){alert("Enter valid phone number!")}
+						else{
+						var actualpn1=/^[0-9]{10}$/;
+							if(!actualpn1.test(pn1)){alert("Enter valid phone number!")}
+						else{
+										alert("Registration successful");
+								
+								//window.location = "main2.html"; // Redirecting to other page.
+									//return false;
+		
+									
+		}
+		}
+		}
+		}
+		}
+	}
+	}
+}
+}
+function validname()
+{
+	var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vname");
+		    hp1.style.color="black";  
+		    	document.getElementById("vname").innerHTML="Invalid name.";     }
+		    else
+		    {
+		    	document.getElementById("vname").innerHTML="cnnnnd"; 
+		    }
+}
+function validuname()
+{
+	var un=document.getElementById("uname").value;
+			var actualuname=/^[a-zA-Z]+[a-zA-Z0-9]/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vuname");
+		    hp1.style.color="black";  
+				document.getElementById("vuname").innerHTML="Invalid username.";       }
+			else
+			{
+				document.getElementById("vuname").innerHTML="";
+			}
+
+}
+function validpword()
+{
+	var pw=document.getElementById("vpword").value;
+	var actualpword=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
+				if(!actualpword.test(pword))
+				{
+					document.getElementById("vpword").innerHTML="Password too weak!";
+				}
+				else
+			{
+				document.getElementById("vpword").innerHTML="";
+			}
+}
+function validcpword()
+{
+	var pw=document.getElementById("pword").value;
+			var cpw=document.getElementById("cpword").value;
+			if(cpw!=pw)
+			{
+				var hp1=document.getElementById("vcpword");
+		    hp1.style.color="black";  
+				document.getElementById("vcpword").innerHTML="Enter valid password";
+			}
+			else{
+				document.getElementById("vcpword").innerHTML="";
+			}
+}
+function validemail()
+{
+	var em=document.getElementById("email").value;
+	var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+							{
+								var hp1=document.getElementById("vemail");
+		    hp1.style.color="black";  
+								document.getElementById("vemail").innerHTML="Invalid email";
+							}
+							else
+							{
+								document.getElementById("vemail").innerHTML="";
+							}
+}
+function validphno()
+{
+	var pn=document.getElementById("phno").value;
+	var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn))
+							{
+								var hp1=document.getElementById("vphno");
+		    hp1.style.color="black";  
+								document.getElementById("vphno").innerHTML="Invalid phone number";
+							}
+							else {document.getElementById("vphno").innerHTML="";}
+}
+function validphno1()
+{
+	var mn=document.getElementById("Text1").value;
+		    var actualname=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vadd");
+		    hp1.style.color="black";  
+		    	document.getElementById("vadd").innerHTML="Invalid address.";     }
+		    else
+		    {
+		    	document.getElementById("vadd").innerHTML=""; 
+		    }
+}
+}
+function validaddress()
+{
+	var mn=document.getElementById("Text1").value;
+		    var actualname=/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vadd");
+		    hp1.style.color="black";  
+		    	document.getElementById("vadd").innerHTML="Invalid address.";     }
+		    else
+		    {
+		    	document.getElementById("vadd").innerHTML=""; 
+		    }
+}
+function validage()
+{
+
+
+        var birthDay = document.getElementById("db").value;
+        var DOB = new Date(birthDay);
+        var today = new Date();
+        var age = today.getTime() - DOB.getTime();
+        age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+       // alert(age);
+      
+   
+document.getElementById("age").value=age;
+	
+	}
+function edit()
+{
+document.getElementById("myname").readOnly = false;
+				document.getElementById("gender").readOnly = false;
+				document.getElementById("db").readOnly = false;
+				document.getElementById("age").readOnly = false;
+				document.getElementById("email").readOnly = false;
+				document.getElementById("phno").readOnly = false;
+				document.getElementById("diagnosis").readOnly = false;
+				document.getElementById("diagnosis").readOnly = false;
+				
+
+
+
+
+}	
+</script>
+</body>
+</html>
