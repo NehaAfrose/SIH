@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>form</title>
+
+</head>
+
+
+<body>
+
+<!--<form action="#" method="post">-->
+	<center>
+		<div id="rpage">
+<table style="padding: 5px;">
+<tr>
+	<td>Name:</td>
+		<td><input type="text" id="myname" value="abc" readonly onblur="validname()"style="height:25px;">
+		<td><p id="vname" > </td> 
+	</tr>
+	
+	
+	
+	<tr>
+	<td>Gender:</td>
+		<td><input type="radio" id="gender" name="gender"  > Male
+  <input type="radio" name="gender" id="gender1"> Female<br></td>
+	</tr>
+	<tr><td>
+		DateofBirth</td>
+		<td><input  style="width:167px;height:25px;"type="date" readonly value="abc" id="db" size="700"></td>
+	</tr>
+	<tr><td>Age</td><td><input type="int" readonly value="4" id="age" onblur="validage()"style="height:25px;"></td></tr>
+
+	<tr>
+	<td>Email:</td>
+		<td><input type="text" id="email" readonly value="abc"onblur="validemail()"style="height:25px;"></td><td><p id="namef"></p></td>
+		<td><p id="vemail" ></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr>
+	<td>Phone.no:</td>
+		<td><input type="tel" id="phno" value="abc"onblur="validphno()"style="height:25px;"></td>
+		<td><p id="vphno"></p></td>
+	</tr>
+	<tr>
+	<td>Diagnosis:</td>
+		<td><input type="text"cols="40"  id="diagnosis"value="abc"onblur="validdiagnosis()"rows="5" style="width:167px; height:50px;" name="Text1"   value="" /></td>
+		<td><p id="vadd"></p></td>
+	</tr>
+	
+	<tr>
+	<td>Tests required<br>if any:</td>
+		<td><input type="text"cols="40"  id="test" value="abc"onblur="validtest()"rows="5" 
+		style="width:167px; height:50px;" name="Text1" value="" /></td>
+		<td><p id="vtest" ></p></td>
+	</tr>
+	<tr>
+	<td>Prescription:</td>
+		<td><input type="text" id="des" value="abc"onblur="validdes()"style="height:25px;"></td>
+		<td><p id="vdes"></p></td>
+	</tr><tr>&nbsp;</tr><tr>&nbsp;</tr>
+	<tr><td><input type="submit" value="Submit" onclick="test1()" id="vsubmit"> </td>
+	<td><input type="button" value="edit" onclick="edit()" id="edit" > </td></tr>
+
+	<tr><td><input type="checkbox" id="checkbox1" name="checkbox1" >send it to the higher medical center </td> </tr>
+	<tr><td><input type="button" value="print" name="print"  id="print"></td> </tr>	
+	<script>
+				document.getElementById("myname").readOnly = true;
+				document.getElementById("gender").readOnly = true;
+				document.getElementById("gender1").readOnly = true;
+				document.getElementById("db").readOnly = true;
+				document.getElementById("age").readOnly = true;
+				document.getElementById("email").readOnly = true;
+				document.getElementById("phno").readOnly = true;
+				document.getElementById("diagnosis").readOnly = true;
+				document.getElementById("test").readOnly = true;
+				document.getElementById("des").readOnly = true;
+				
+</script>
+
+	
+	
+</table></center>
+
+</div>
+<br><br><br><br>
+<div>
+
+</div>
+<script type="text/javascript">
+		function test1()
+		{
+		
+		
+			document.getElementById("myname").readOnly = true;
+				document.getElementById("gender").readOnly = true;
+				document.getElementById("gender1").readOnly = true;
+				document.getElementById("db").readOnly = true;
+				document.getElementById("age").readOnly = true;
+				document.getElementById("email").readOnly = true;
+				document.getElementById("phno").readOnly = true;
+				document.getElementById("diagnosis").readOnly = true;
+				document.getElementById("test").readOnly = true;
+				document.getElementById("des").readOnly = true;
+				
+				
+				
+			var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+			var em=document.getElementById("email").value;
+			var pn=document.getElementById("phno").value;
+	        if(!actualname.test(mn))   {    alert("Please enter a valid name");     }
+		else{
+			
+							var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+							{
+								alert("Enter valid email id!")
+							}
+						else{
+							var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn)){alert("Enter valid phone number!")}
+						else{
+						var actualpn1=/^[0-9]{10}$/;
+							if(!actualpn1.test(pn1)){alert("Enter valid phone number!")}
+						else{
+										alert("Registration successful");
+								
+								//window.location = "main2.html"; // Redirecting to other page.
+									//return false;
+		
+									
+		}
+		}
+		}
+		}
+		}
+function validname()
+{
+	var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vname");
+		    hp1.style.color="black";  
+		    	document.getElementById("vname").innerHTML="Invalid name.";     }
+		    else
+		    {
+		    	document.getElementById("vname").innerHTML="cnnnnd"; 
+		    }
+}
+
+
+
+function validemail()
+{
+	var em=document.getElementById("email").value;
+	var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+							{
+								var hp1=document.getElementById("vemail");
+		    hp1.style.color="black";  
+								document.getElementById("vemail").innerHTML="Invalid email";
+							}
+							else
+							{
+								document.getElementById("vemail").innerHTML="";
+							}
+}
+function validphno()
+{
+	var pn=document.getElementById("phno").value;
+	var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn))
+							{
+								var hp1=document.getElementById("vphno");
+		    hp1.style.color="black";  
+								document.getElementById("vphno").innerHTML="Invalid phone number";
+							}
+							else {document.getElementById("vphno").innerHTML="";}
+}
+function validdiagnosis()
+{
+	var mn=document.getElementById("diagnosis").value;
+		    var actualname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+		    if(!actualname.test(mn))   {  var hp1=document.getElementById("vadd");
+		    hp1.style.color="black";  
+		    	document.getElementById("vadd").innerHTML="Invalid !!.";     }
+		    else
+		    {
+		    	document.getElementById("vadd").innerHTML=""; 
+		    }
+}
+function validage()
+{
+
+
+        var birthDay = document.getElementById("db").value;
+        var DOB = new Date(birthDay);
+        var today = new Date();
+        var age = today.getTime() - DOB.getTime();
+        age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+       // alert(age);
+      
+   
+document.getElementById("age").value=age;
+	
+	}
+function edit()
+{
+			document.getElementById("myname").readOnly = true;
+			document.getElementById("gender").readOnly = true;
+			document.getElementById("gender1").readOnly = true;
+			document.getElementById("db").readOnly = true;
+			document.getElementById("age").readOnly = true;
+			document.getElementById("email").readOnly = false;
+			document.getElementById("email").readOnly = false;
+			document.getElementById("phno").readOnly = false;
+			document.getElementById("diagnosis").readOnly = false;
+			document.getElementById("test").readOnly = false;
+			document.getElementById("des").readOnly = false;
+
+
+
+}	
+
+function validtest()
+{
+	var un=document.getElementById("test").value;
+			var actualuname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vtest");
+		    hp1.style.color="black";  
+				document.getElementById("vtest").innerHTML="Invalid!!";       }
+			else
+			{
+				document.getElementById("vtest").innerHTML="";
+			}
+
+}
+
+function validdes()
+{
+	var un=document.getElementById("des").value;
+			var actualuname=/^(\s|\S)*(\S)+(\s|\S)*$/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vdes");
+		    hp1.style.color="black";  
+				document.getElementById("vdes").innerHTML="Invalid!!";       }
+			else
+			{
+				document.getElementById("vdes").innerHTML="";
+			}
+
+}
+
+
+
+
+</script>
+</body>
+</html>
